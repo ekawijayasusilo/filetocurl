@@ -129,7 +129,7 @@ spec:
     spec:
       containers:
       - name: result
-        image: dockersamples/examplevotingapp_result:before
+        image: ekawijayasusilo/result_with_http_metrics
         ports:
         - containerPort: 80
           name: result
@@ -167,7 +167,7 @@ spec:
     spec:
       containers:
         - name: vote
-          image: ekawijayasusilo/example_vote_wo_cookies
+          image: ekawijayasusilo/vote_with_http_metrics
           ports:
             - 
               containerPort: 80
