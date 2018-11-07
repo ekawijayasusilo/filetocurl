@@ -38,7 +38,7 @@ spec:
           name: redis
         resources:
             limits:
-              cpu: "250m"
+              cpu: "200m"
 
 --- 
 apiVersion: v1
@@ -70,7 +70,8 @@ spec:
         app: db
     spec:
       containers:
-        - name: db--init01
+        - 
+          name: db--init01
           image: postgres:9.4
           env:
             - name: PGDATA
@@ -136,8 +137,8 @@ spec:
         - containerPort: 80
           name: result
         resources:
-          limits:
-            cpu: "250m"
+            limits:
+              cpu: "200m"
 
 ---
 apiVersion: v1
@@ -173,13 +174,12 @@ spec:
       containers:
         - name: vote--init01
           image: ekawijayasusilo/example_vote_wo_cookies
+          ports:
+            - containerPort: 80
+              name: vote
           resources:
             limits:
-              cpu: "250m"
-          ports:
-            - 
-              containerPort: 80
-              name: vote
+              cpu: "200m"
 --- 
 apiVersion: v1
 kind: Service
@@ -206,9 +206,8 @@ spec:
         app: worker
     spec: 
       containers: 
-        - name: worker--init01
-          image: dockersamples/examplevotingapp_worker
-          name: worker
+        - image: dockersamples/examplevotingapp_worker
+          name: worker--init01
           resources:
             limits:
-              cpu: "250m"
+              cpu: "200m"
