@@ -31,7 +31,7 @@ spec:
         app: redis
     spec:
       containers:
-      - 
+      - name: redis--init01
         image: redis:alpine
         ports:
         - containerPort: 6379
@@ -70,7 +70,7 @@ spec:
         app: db
     spec:
       containers:
-        - 
+        - name: db--init01
           image: postgres:9.4
           env:
             - name: PGDATA
@@ -130,7 +130,7 @@ spec:
         app: result
     spec:
       containers:
-      - 
+      - name: result--init01
         image: dockersamples/examplevotingapp_result:before
         ports:
         - containerPort: 80
@@ -171,7 +171,7 @@ spec:
         app: vote
     spec:
       containers:
-        - 
+        - name: vote--init01
           image: ekawijayasusilo/example_vote_wo_cookies
           resources:
             limits:
@@ -206,7 +206,7 @@ spec:
         app: worker
     spec: 
       containers: 
-        - 
+        - name: worker--init01
           image: dockersamples/examplevotingapp_worker
           name: worker
           resources:
