@@ -38,7 +38,7 @@ spec:
           name: redis
         resources:
             limits:
-              cpu: "200m"
+              cpu: "100m"
 
 --- 
 apiVersion: v1
@@ -179,7 +179,7 @@ spec:
               name: vote
           resources:
             limits:
-              cpu: "200m"
+              cpu: "300m"
 --- 
 apiVersion: v1
 kind: Service
