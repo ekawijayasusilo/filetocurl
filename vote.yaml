@@ -174,13 +174,13 @@ spec:
       containers:
         - name: vote
           image: ekawijayasusilo/example_vote_wo_cookies
+          resources:
+            limits:
+              cpu: "250m"
           ports:
             - 
               containerPort: 80
               name: vote
-          resources:
-            limits:
-              cpu: "250m"
 --- 
 apiVersion: v1
 kind: Service
