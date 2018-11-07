@@ -31,7 +31,7 @@ spec:
         app: redis
     spec:
       containers:
-      - name: redis
+      - 
         image: redis:alpine
         ports:
         - containerPort: 6379
@@ -71,7 +71,6 @@ spec:
     spec:
       containers:
         - 
-          name: db
           image: postgres:9.4
           env:
             - name: PGDATA
@@ -131,14 +130,14 @@ spec:
         app: result
     spec:
       containers:
-      - name: result
+      - 
         image: dockersamples/examplevotingapp_result:before
         ports:
         - containerPort: 80
           name: result
-          resources:
-            limits:
-              cpu: "250m"
+        resources:
+          limits:
+            cpu: "250m"
 
 ---
 apiVersion: v1
@@ -172,7 +171,7 @@ spec:
         app: vote
     spec:
       containers:
-        - name: vote
+        - 
           image: ekawijayasusilo/example_vote_wo_cookies
           resources:
             limits:
